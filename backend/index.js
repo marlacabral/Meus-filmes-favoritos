@@ -1,12 +1,13 @@
 const express = require('express');
-const app = express()
+
 const cors = require('cors');
+const app = express()
 app.use(express.json());
 app.use(cors());
 
-const moviesRouter = require('./routers/moviesRoutes')
+const moviesRouter = require('./routers/moviesRoutes');
 
-app.use('/movies', moviesRouter)
+app.use('/movies', moviesRouter);
 
 
 app.get('/', (req, res) => {
@@ -15,5 +16,6 @@ app.get('/', (req, res) => {
 
 
 const port = 3002;
-app.listen(port, () => console.log(`Rodando na porta ${port}.`));
-
+app.listen(port, () => {
+    console.log(`Rodando na porta ${port}.`)
+});

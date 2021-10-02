@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My-Favorite-Movies</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class='container'>
+               <h2>My Favorite Movies</h2>
+
+            </div>
+        </nav>
+    </header>
+   
+   
+    <main>
+
+        <form onsubmit='postMovie(event)' class="container">
+
+            <div>
+                <label for='name'>Name:</label>
+                <input type="text" required id='name' placeholder="Enter the movie name">
+            </div>
+
+            <div>
+                <label for='image' required>Image:</label>
+                <input type="text" id='image' placeholder="Add image URL">
+            </div>
+
+            <div class="form-genre">
+                <label for='genre'>Genre:</label>
+                <input type="text" required id='genre' placeholder="Enter the movie genre">
+            </div>
+
+            <div>
+                <label for='note'>Note:</label>
+                <input type="number" required id='note' placeholder="Note of 0 to 10">
+            </div>
+
+            <div class='send'>
+                <button type="submit" class="btn-submit" value="btn-submit">Send</button>
+            </div>
+        
+        </form>                 
+
+            <section class="container">
+
+                <div id='list'>
+                </div>
+        
+            </section>
+
+        <footer>Development by @marlacabral for BlueEdtech</footer>
+    </main>
+    
+    <script src='./script.js'></script>
+</body>
+</html>

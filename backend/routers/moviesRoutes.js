@@ -30,35 +30,42 @@ router.get('/', (req, res) => {
 })
 
 router.get = ('/movies/:id', (req, res) => {
-    const idParam = req.params.id; 
-    const movie = list[id];
+    const idParam = req.params.id -1; 
+    const index = list.findIndex((movie) => movie.id == idParam);
+    const movie = list[index];
     res.send(movie);
 })
 
 router.post = ('/add', (req, res) => {
-    const movie = req.body.movies;
-    const id = list.length;
+    const movie = req.body;
+    movie.id = list.length;
     list.push(movie);
 
-    res.send(`Movie add with sucess: ${movie}. The ID of movie is ${id}.`)
+    res.status(201).send(`Movie add with sucess: ${movie}. The ID of movie is ${id}.`)
 
 })
 
 router.put = ('/edit/:id', (req, res) => {
-    const id = req.params.id -1;
-    const movie = req.body.params;
-    const oldMovie = list[id];
-    list[id] = movie;
+    const idParam = req.params.id -1;
+    const movie = req.body;
+    let oldMovie = list.findIndex((vaga) => vaga.id == idParam);
+
+    oldMovie.name = movie.name;
+    oldMovie.image = movie.image;
+    oldMovie.genre = movie.genre;
+    oldMovie.note = movie.note;
 
     res.send(`Movie changed with sucess: ${movie}. The ID of movie is ${id}.`)
    
 })
 
 router.delete = ('/delete/:id', (req, res) => {
-    const id = req.params.id -1;
+    const idParam = req.params.id-1;
     list.splice(id,1)
-    delete movies[id];
-    res.send(movie);
+    const index = list.findIndex((movie) => movie.id == idParam);
+    list.splice(index, 1);
+    
+    res.send(`Movie deleted with sucess.`);
 })
 
 module.exports = router;
