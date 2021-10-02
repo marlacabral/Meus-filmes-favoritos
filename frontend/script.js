@@ -1,27 +1,22 @@
-const { url } = require("inspector");
-
-const urlApi = "http://localhost:3002/movies";
-const list = document.getElementById('list');
+const urlApi = "http://localhost:3001/movies";
+const list = document.getElementById("list");
 let edit = false;
 let idEdit = 0;
 
 const getMovies = async () => {
     const response = await fetch(urlApi);
-    const data = await response.json();
-
+    const data = await response.json();    
     data.map((movie) => {
         list.insertAdjacentHTML('beforeend', `
-        <div class='card-movie' 
+        <section class='container-card'>
+
             <img class='card-img'>${movie.image}</img>
             <p class='card-text'>${movie.name}</p>
             <p class='card-genre'>${movie.genre}</p>
             <p class='card-note'>${movie.note}</p>
-            <button type='button' class='btn-edit' onclick='putMovie(${movie.id})'>Edit</button>
+            <button type="button" class="btn-edit" onclick="putMovie(${movie.id})">Edit</button>
             <button type='button' class='btn-delete' onclick='deleteMovie(${movie.id})'>Delete</button>
-        </div>
-        `)
-    })
-}
+        </section>`)})}
 getMovies();
 
 const submitForm = async (evento) => {
@@ -101,7 +96,7 @@ const putMovie = async (id) => {
     imageEl.value = movie.image;
     nameEl.value = movie.name;
     genreEl.value = movie.genre;
-    noteEl.value = movie.note
+    noteEl.value = movie.note;
 }
 
 const deleteMovie = async (id) => {

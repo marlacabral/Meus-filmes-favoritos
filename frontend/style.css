@@ -4,16 +4,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-html{
-    height: 100%;
-
-}
-
-/* body{
-    height: 100%;
-    position: relative;
-    
-} */
 
 header{
     color: rgb(248, 28, 131);
@@ -29,17 +19,15 @@ header{
 
 }
 
-form{
+.form-items{
     padding-top: 4rem; 
     padding-bottom: .3rem;
     display: flex;
     flex-wrap: wrap;
-    width: 40%;
-    height: 30%;
+    width: 100%;
     justify-content: center; 
     align-content: center;
-    align-items: center;
-    margin: 0 1rem;
+    margin: 0 2rem;
     
 
 }
@@ -51,69 +39,84 @@ input{
     border: 1px solid #0a0a0a;
     box-sizing: border-box;
     border-radius: 10px;
-    /* padding: .4rem; */
-    
-
-    
+    padding: .4rem; 
        
 }
+
 
 ::placeholder{
     color:rgb(248, 28, 131)
 }
 
 
-/* div.send{
-    background: #0c0c0c;
-    border-radius: 15px;
-    color:rgb(248, 28, 131);
-    /* padding: .8rem;
-    margin-left: 35%;
-    margin-right: 30%;
-    margin: 3%; */
-    /* font-size: 2rem bold; */
-    
-.btn-submit{
-margin: 0 10% 0 47%;
 
-}
-
-
-.card{
+.container-card{
     display: flex;
     flex-direction: row;
     justify-content: center; 
     align-items: center;  
-    width: 100%;
-    
     margin: 2% 2% 2% 2%;
     
 }
 
-.card-filme{
+.card-movie{
     background:rgba(248, 28, 131, 0.15);
     border-radius: 15px 0; 
     border: 3px solid; 
     display:flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-between;
-    width: 20%;
-    height: 20%;
+    justify-content: center;
+    width: 28%;
+    height: auto;
     margin: 3%;
     box-shadoW: rgba(248, 28, 131, 0.445) 4px 9px;
-    max-height: 100%;
+    
 
 }
+.btn-submit{
+    background: #0c0c0c;
+    border-radius: 15px;
+    color:rgb(248, 28, 131);
+    padding: .8rem;
+    margin-left: 35%;
+    margin-right: 30%;
+    margin: 3%;
+    font-size: 2rem bold;
+}
+  
+.btn-edit{
+    background: #0c0c0c;
+    border-radius: 15px;
+    color:rgb(248, 28, 131);
+    padding: .8rem;
+    margin-left: 35%;
+    margin-right: 30%;
+    margin: 3%;
+    font-size: 2rem bold;
+    
+}
 
+.btn-delete{
+    background: #0c0c0c;
+    border-radius: 15px;
+    color:rgb(248, 28, 131);
+    padding: .8rem;
+    margin-left: 35%;
+    margin-right: 30%;
+    margin: 3%;
+    font-size: 2rem bold;
+    
+}
 
+/* 
 img{
     border-radius: 15px 0;
     width: 100%;
     height: auto;
     padding-bottom: 5%;
     
-}
+} */
 
 
 footer{
@@ -126,4 +129,4 @@ footer{
 
 
 
-}
+} 
