@@ -31,13 +31,15 @@ header{
 
 .form{
     padding-top: 4rem; 
-    padding-bottom: 1rem;
+    padding-bottom: .3rem;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 40%;
     height: 30%;
-    justify-content: space-between; 
+    justify-content: center; 
     align-content: center;
+    align-items: center;
+    margin: 0 10% 0 30%;
     
 
 }
@@ -65,10 +67,10 @@ button{
     background: #0c0c0c;
     border-radius: 15px;
     color:rgb(248, 28, 131);
-    padding: .8rem;
+    /* padding: .8rem;
     margin-left: 35%;
     margin-right: 30%;
-    margin: 3%;
+    margin: 3%; */
     font-size: 2rem bold;
 
 }

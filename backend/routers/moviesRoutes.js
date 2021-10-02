@@ -44,7 +44,7 @@ router.post = ('/add', (req, res) => {
 
 })
 
-router.put = ('/movies/edit/:id', (req, res) => {
+router.put = ('/edit/:id', (req, res) => {
     const id = req.params.id -1;
     const movie = req.body.params;
     const oldMovie = list[id];
@@ -54,7 +54,7 @@ router.put = ('/movies/edit/:id', (req, res) => {
    
 })
 
-router.delete = ('/movies/delete/:id', (req, res) => {
+router.delete = ('/delete/:id', (req, res) => {
     const id = req.params.id -1;
     list.splice(id,1)
     delete movies[id];
