@@ -14,9 +14,9 @@ const getMovies = async () => {
             <div class="card-body">
             
                 <img class='card-img' src=${movie.image}>
-                <p class='card-text'>${movie.name}</p>
-                <p class='card-genre'>${movie.genre}</p>
-                <p class='card-note'>${movie.note}</p>
+                <p class='card-text'><strong>Movie: ${movie.name}</strong></p>
+                <p class='card-genre'><strong>Genre: ${movie.genre}</strong></p>
+                <p class='card-note'><strong>Note: ${movie.note}</strong></p>
 
                 <button type="button" class="btn-edit" onclick="putMovie(${movie.id})">Edit</button>
 
@@ -81,6 +81,8 @@ genre.value = '';
 note.value = '';
 
 list.innerHTML = '';
+
+edit = false;
 }
 
 const getMovieById = async (id) => {
