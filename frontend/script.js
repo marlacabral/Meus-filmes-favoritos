@@ -1,22 +1,28 @@
-const urlApi = "http://localhost:3001/movies";
+const urlApi = "http://localhost:3000/movies";
 const list = document.getElementById("list");
 let edit = false;
 let idEdit = 0;
 
 const getMovies = async () => {
     const response = await fetch(urlApi);
-    const data = await response.json();    
+    const data = await response.json();
+
     data.map((movie) => {
         list.insertAdjacentHTML('beforeend', `
-        <section class='container-card'>
+        <div class="card">
 
-            <img class='card-img'>${movie.image}</img>
-            <p class='card-text'>${movie.name}</p>
-            <p class='card-genre'>${movie.genre}</p>
-            <p class='card-note'>${movie.note}</p>
-            <button type="button" class="btn-edit" onclick="putMovie(${movie.id})">Edit</button>
-            <button type='button' class='btn-delete' onclick='deleteMovie(${movie.id})'>Delete</button>
-        </section>`)})}
+            <div class="card-body">
+            
+                <img class='card-img' src=${movie.image}>
+                <p class='card-text'>${movie.name}</p>
+                <p class='card-genre'>${movie.genre}</p>
+                <p class='card-note'>${movie.note}</p>
+
+                <button type="button" class="btn-edit" onclick="putMovie(${movie.id})">Edit</button>
+
+                <button type='button' class='btn-delete' onclick='deleteMovie(${movie.id})'>Delete</button>
+                
+        </div>`)})}
 getMovies();
 
 const submitForm = async (evento) => {
@@ -52,7 +58,7 @@ const submitForm = async (evento) => {
         }
 
 }else{
-    const request = new Request(`${urlApi}/${idEdit}`,{
+    const request = new Request(`${urlApi}/edit/${idEdit}`,{
         method: 'PUT',
         body:JSON.stringify(movie),
         headers: new Headers({
@@ -79,7 +85,7 @@ list.innerHTML = '';
 
 const getMovieById = async (id) => {
     const response = await fetch(`${urlApi}/${id}`);
-    return movie = response.json();
+    return (movie = response.json());
 }
 
 const putMovie = async (id) => {
@@ -100,13 +106,22 @@ const putMovie = async (id) => {
 }
 
 const deleteMovie = async (id) => {
-    const request = new Request(`${urlApi}/${id}`, {
-        method: 'DELETE',
-    })
+    
+  
+    try {
+        const request = new Request(`${urlApi}/delete/${id}`, {
+            method: 'DELETE',  })
+        const response = await fetch(request);
+            if(!response.ok){
+                const msg = `There was an error "${response.status} ${response.statusText}"`
+                throw new Error(msg)
+            }
+        const data = await response.json();
 
-    const response = await fetch(request);
-    const data = await response.json();
-
-    list.innerHTML = '';
-    getMovies();
+        list.innerHTML = '';
+        getMovies();
+    } catch (error) {
+        console.log(error)
+    }
+    
 }

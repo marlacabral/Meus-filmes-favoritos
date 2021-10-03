@@ -36,7 +36,7 @@ router.get('/:id', (req, res) => {
     res.send(movie);
 })
 
-router.put('/:id', (req, res) => {
+router.put('/edit/:id', (req, res) => {
     const movieEdit = req.body;
     const id = req.params.id;
     let oldMovie = list.find((movie) => movie.id == id);

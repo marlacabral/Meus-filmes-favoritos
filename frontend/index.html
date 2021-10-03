@@ -21,60 +21,52 @@
    
     <main>
 
-        <form submitForm(event) id='form' class="container">
+      <form onsubmit="submitForm(event)" id='form' class="container">
 
-            <div class='form-items'>
+        <div class='form-items'>
 
-                <div class='form-group'>
+            <div class='form-group'>
 
-                    <div class='form-group'>
-                        <label for='image'>Image</label>
-                        <input type="image" id='image' required placeholder="Add image URL" class="form-control">
-                    </div>
-
-                    <label for='name'>Name</label>
-                    
-                    <input type="text" required id='name' placeholder="Enter the movie name" class="form-control">
-                    
+                <div class='card-img'>
+                    <label for='image'>Image</label>
+                    <input type="text" id='image' required placeholder="Add image URL" class="form-control">
                 </div>
 
-                
-            </div>
+                <div class='card-img'>
+                  <label for='name'>Name</label>
+                  <input type="text" required id='name' placeholder="Enter the movie name" class="form-control">
+                </div>
 
-            <div class='form-items'>
-
-                <div class="form-group">
+                <div class="card-genre">
                     <label for='genre'>Genre</label>
                     <input type="text" required id='genre' placeholder="Enter the movie genre" class="form-control">
                 </div>
 
-                <div class="form-group">
+                <div class="card-note">
                     <label for='note'>Note</label>
                     <input type="number" required id='note' placeholder="Note of 0 to 10" class="form-control">
                 </div>
-            </div>
+        </div>
 
-            <div class='form-items'>
+        <div class='form-items'>
 
-                <div class='send'>
-                    <button type="submit" class="btn-submit" >Send</button>
-                </div>
+            <div class='send'>
+                <button type="submit" class="btn-submit">Send</button>
             </div>
-            
-        </form>                 
+        </div>
+        
+    </form>            
 
             <section class="container-card">
 
-                <div class="list">
+                <div id="list">
                 </div>
         
             </section>
 
-        <footer>Development by @marlacabral for BlueEdtech</footer>
-    
-    
-    <script src="./script.js"></script>
+        <footer>Development by MarlaCabral&copy; for BlueEdtech</footer>
 
     </main>
+    <script src="./script.js"></script>
 </body>
 </html>
