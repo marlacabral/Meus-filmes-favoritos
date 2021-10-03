@@ -4,24 +4,24 @@ const router = express.Router();
 const list =[
     {
         id: Date.now(),
-        image:"https://optclean.com.br/wp-content/uploads/2016/05/Filme-Interestelar-1280x720.jpg",
+        image:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.cancaonova.com%2Fcnimages%2Fcanais%2Fuploads%2Fsites%2F9%2F2015%2F11%2FDica-de-Filme-Interestelar.jpg&f=1&nofb=1",
         name: "Interestellar",
         genre: "Ficction Cientific",
-        note: "8"
+        note: "9"
     },
     {
         id: Date.now(),
-        image:"https://www.ideiasnutritivas.com/content/uploads/2020/09/15-licoes-inspiradoras-do-filme-comer-rezar-e-amar.jpg",
+        image:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.qie-5I6Zo_foTVRlEfjclgHaEK%26pid%3DApi&f=1",
         name: 'Eat, Pray, Love',
         genre: 'Romance/Drama',
-        note: '7.5'
+        note: '7'
     },
     {
         id: Date.now(),
-        image:"https://st.depositphotos.com/2036173/2101/i/600/depositphotos_21016213-stock-photo-isolated-donkey.jpg",
+        image:"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.winwallpapers.net%2Fw1%2F2013%2F12%2FToy-Story-3-2010-Wallpapers-3.jpg&f=1&nofb=1",
         name: 'Toy Story',
         genre: 'Children/Comedy',
-        note: '9.8'
+        note: '10'
     }
 ]
 
